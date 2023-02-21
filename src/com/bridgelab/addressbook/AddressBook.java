@@ -32,6 +32,63 @@ public class AddressBook {
 		return contacts.toString() ;
 	}
 	
+	 void editContact()
+		{	if( contactlist.size()>0) {
+			String newFirstName;
+			System.out.println("Enter First name of contact to edit it ");
+			newFirstName = sc.next();
+			for (int i = 0; i < contactlist.size(); i++) 
+			{
+				if (contactlist.get(i).getFirstName().equals(newFirstName))
+				{
+					System.out.println("Enter the field to edit:\n1.First Name\n2.Last Name\n3.Address\n4.city\n5.State\n6.Zip\n7.Phone\n8.Email");
+					int input = sc.nextInt();
+					switch (input)
+					{
+					case 1:
+						System.out.println("Enter new first name");
+						contactlist.get(i).setFirstName(sc.next());
+						break;
+					case 2:
+						System.out.println("Enter new last name");
+						contactlist.get(i).setLastName(sc.next());
+						break;
+					case 3:
+						System.out.println("Enter new Address");
+						contactlist.get(i).setAddress(sc.next());
+						break;
+					case 4:
+						System.out.println("Enter new city");
+						contactlist.get(i).setCity(sc.next());
+						break;
+					case 5:
+						System.out.println("Enter new state");
+						contactlist.get(i).setState(sc.next());
+						break;
+					case 6:
+						System.out.println("Enter new zip");
+						contactlist.get(i).setZipCode(sc.nextInt());
+						break;
+					case 7:
+						System.out.println("Enter new phone number");
+						contactlist.get(i).setMobileNumber(sc.next());
+						break;
+					case 8:
+						System.out.println("Enter new email");
+						contactlist.get(i).setEmailId(sc.next());
+						break;
+					default:
+						System.out.println("Invalid Entry");
+					}     
+					System.out.println("Contact Edited Successfully");
+				} else 
+					System.out.println("Contact doesn't exist");
+			}
+		}else System.out.println("There are no contacts as of now.....");
+		}
+
+		
+	
 
 
 }
